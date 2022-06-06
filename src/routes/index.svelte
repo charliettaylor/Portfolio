@@ -3,6 +3,8 @@
   import Nameplate from "../components/Nameplate.svelte";
   import Footer from "../components/Footer.svelte";
   import Collapsible from "../components/Collapsible.svelte";
+
+  import { projects } from "./projects";
 </script>
 
 <title>
@@ -29,7 +31,9 @@
 
     <section class="two" id="two">
       <div class="page2">
-        <Collapsible heading="Sample Project" content="This is an example" />
+        {#each projects as project}
+          <Collapsible heading={project.heading} content={project.content}/>
+        {/each}
       </div>
       <div class="footer" id="footer">
         <Footer />
@@ -113,6 +117,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
 
   #two {

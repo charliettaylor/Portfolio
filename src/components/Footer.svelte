@@ -12,7 +12,7 @@
     width: 100vw;
     position: relative;
     bottom: 0px;
-    padding: 1vh 2.5vw 1vh 2.5vw;
+    padding: 0.25vh 2.5vw 0.25vh 2.5vw;
     background-color: cornflowerblue;
     align-items: center;
     display: flex;
