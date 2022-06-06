@@ -1,3 +1,7 @@
+<svelte:head>
+  <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet"> 
+</svelte:head>
+
 <script>
   import Header from "../components/Header.svelte";
   import Nameplate from "../components/Nameplate.svelte";
@@ -30,6 +34,11 @@
     </section>
 
     <section class="two" id="two">
+      <div class="projects">
+        <h1>
+          Projects
+        </h1>
+      </div>
       <div class="page2">
         {#each projects as project}
           <Collapsible heading={project.heading} content={project.content}/>
@@ -65,6 +74,11 @@
     width: 100vw;
     min-height: 100vh;
     scroll-snap-align: start;
+  }
+
+  h1 {
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 2.5rem;
   }
 
   .wrapper {
@@ -109,6 +123,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: ivory;
+    position: relative;
   }
 
   .page2 {

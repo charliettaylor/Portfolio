@@ -41,10 +41,11 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: var(--left);
+		background-color: ivory;
 		text-align: left;
-		color: var(--right);
-		border: 1px solid ivory;
+		color: var(--left);
+		/* border: 1px solid var(--left); */
+		border: 0px;
     font-family: "Source Code Pro", sans-serif;
 		cursor: pointer;
 		transition: .3s;
@@ -56,8 +57,15 @@
 
 	button.accordion:hover,
 	button.accordion.active {
-		background-color: var(--right);
-		color: var(--left);
+		background-color: linear-gradient(
+      to right,
+      var(--left) 0%, 
+      var(--left) 50%,
+      var(--right) 50%,
+      var(--right) 100%
+    );
+		/* border: 0px; */
+		color: lime;
 	}
 	
 	.heading {
@@ -70,6 +78,7 @@
 		padding:10px 10px 5px;
 		margin: auto 0;
     font-family: "Source Code Pro", sans-serif;
+		color: var(--left);
 	}
 	span.icon {
 		font-size: 1.8rem;
@@ -85,9 +94,8 @@
 	}
 	
 	section.open-panel {
-		height: 170px;
-		box-shadow: inset 0 0 5px black;
-    background-color: var(--left);
+		height: 10vw;
+    background-color: ivory;
 	}
 	
 	section div button {

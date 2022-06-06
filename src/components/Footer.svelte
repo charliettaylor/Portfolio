@@ -19,7 +19,7 @@
   }
 
   p {
-    color: white;
+    color: ivory;
     font-family: "Source Code Pro", sans-serif;
   }
 </style>
