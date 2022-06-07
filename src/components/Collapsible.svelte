@@ -20,13 +20,11 @@
   </button>
 
   <section class:open-panel={isOpen} class="panel">
-    <p>
+		<p>
       {content}
     </p>
   </section>
 </div>
-
-
 
 <style>
   :root {
@@ -73,13 +71,14 @@
 	}
 	
 	p {
-		font-size: 1.2rem;
+		font-size: 1rem;
 		text-align: justify;
 		padding:10px 10px 5px;
 		margin: auto 0;
     font-family: "Source Code Pro", sans-serif;
 		color: var(--left);
 	}
+
 	span.icon {
 		font-size: 1.8rem;
 	}
@@ -94,7 +93,7 @@
 	}
 	
 	section.open-panel {
-		height: 10vw;
+		height: 5vw;
     background-color: ivory;
 	}
 	
