@@ -3,111 +3,95 @@
 </svelte:head>
 
 <script lang="ts">
-	export let heading: string;
-	export let content: string;
-	
-	let isOpen: boolean = false;	
+	import { slide } from "svelte/transition";
+	export let heading: String;
+	export let content: String;
+	let isOpen = false;
+	const toggle = () => isOpen = !isOpen;
 </script>
 
-<div class="collapsible">
-  <button class:active={isOpen} class="accordion" on:click={() => isOpen = !isOpen}>
-    <span class="heading">{heading}</span>
-    {#if isOpen}
-      <span class="icon">&minus;</span>  
-    {:else}
-      <span class="icon">&plus;</span>
-    {/if}
-  </button>
-
-  <section class:open-panel={isOpen} class="panel">
-		<p>
-      {content}
-    </p>
-  </section>
-</div>
-
 <style>
-  :root {
-    --left: #051622;
-    --right: #E40C2B;
-  }
+	p {
+		font-family: "Source Code Pro", sans-serif;
+		color: black;
+		font-size: 1rem;
+		padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+	}
 
-	button.accordion {
-		width: 100%;
-		padding: 15px;
-		margin: 0;
-		display: flex;
+	button {
+		width: 60vw;
 		justify-content: space-between;
 		align-items: center;
-		background-color: ivory;
-		text-align: left;
-		color: var(--left);
-		/* border: 1px solid var(--left); */
-		border: 0px;
-    font-family: "Source Code Pro", sans-serif;
+		border: none;
+		background: ivory;
+		display: flex;
+		color: black;
+		font-size: 1.75rem;
 		cursor: pointer;
-		transition: .3s;
+		margin: 0;
+		padding: 0.5em;
 	}
-	
-  .collapsible {
-    width: 60vw;
-  }
 
-	button.accordion:hover,
-	button.accordion.active {
-		background-color: linear-gradient(
-      to right,
-      var(--left) 0%, 
-      var(--left) 50%,
-      var(--right) 50%,
-      var(--right) 100%
-    );
-		/* border: 0px; */
+	button:hover {
+		background-color: var(--left);
 		color: lime;
 	}
-	
-	.heading {
-		font-size: 1.5rem;
-	}
-	
-	p {
-		font-size: 1rem;
-		text-align: justify;
-		padding:10px 10px 5px;
-		margin: auto 0;
-    font-family: "Source Code Pro", sans-serif;
-		color: var(--left);
+
+	button:active {
+		background-color: var(--left);
+		color: lime;
 	}
 
-	span.icon {
-		font-size: 1.8rem;
+	.heading {
+		padding: 0.1rem;
 	}
-	
-	section.panel {
-		display: flex;
+
+	.inside {
+		background-color: ivory;
+		width: 58.9vw;
+		/* padding: 0.5rem; */
+		text-align: left;
+		height: auto;
+		margin: 0;
+		margin-bottom: 1em;
+		padding-right: 0;
+	}
+
+	.accordion {
+		display: block;
+	}
+
+	.accordion {
+    display: flex;
 		flex-direction: column;
-		align-items: center;
-		height: 0;
-		overflow: auto;
-		transition: all .5s;	
+		width: 60vw;
 	}
-	
-	section.open-panel {
-		height: 5vw;
-    background-color: ivory;
+
+	.accordion .inside {
+		width: 100%;
 	}
-	
-	section div button {
-		width: 150px;
-		font-weight: bold;
-		color: white;
-		background-color: hsl(11, 63%, 40%);
-		padding: 10px 0;
-		margin: 10px 10px 20px;
-		cursor: pointer;
-	}
-	
-	div button:active {
-		background-color: hsl(11, 63%, 34%);
+
+	.accordion button {
+		width: 100%;
 	}
 </style>
+
+<div class="accordion">
+	<button on:click={toggle} aria-expanded={isOpen}>
+		<span class="heading">{heading}</span>
+		{#if isOpen}
+			<span class="icon">&minus;</span>
+		{:else}
+			<span class="icon">&plus;</span>
+		{/if}
+	</button>
+	
+	{#if isOpen}
+		<span class="inside" transition:slide={{ duration: 300 }}>
+			<p>
+				{content}
+			</p>
+		</span>
+	{/if}
+</div>
+
