@@ -74,10 +74,15 @@
 	.accordion button {
 		width: 100%;
 	}
+	
+	.active {
+		background-color: var(--left);
+		color: lime;
+	}
 </style>
 
 <div class="accordion">
-	<button on:click={toggle} aria-expanded={isOpen}>
+	<button class="{isOpen ? 'active' : ''}" on:click={toggle} aria-expanded={isOpen}>
 		<span class="heading">{heading}</span>
 		{#if isOpen}
 			<span class="icon">&minus;</span>
