@@ -25,6 +25,7 @@
 		border: none;
 		background: ivory;
 		display: flex;
+		font-family: "Source Code Pro", sans-serif;
 		color: black;
 		font-size: 1.75rem;
 		cursor: pointer;

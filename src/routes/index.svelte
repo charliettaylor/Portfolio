@@ -7,8 +7,10 @@
   import Nameplate from "../components/Nameplate.svelte";
   import Footer from "../components/Footer.svelte";
   import Collapsible from "../components/Collapsible.svelte";
+  import Card from "../components/Card.svelte";
 
   import { projects } from "./projects";
+  import { schools } from "./schools";
 </script>
 
 <title>
@@ -33,7 +35,7 @@
       </div>
     </section>
 
-    <section class="two" id="two">
+    <section id="two">
       <div class="projects">
         <h1>
           Projects
@@ -44,12 +46,24 @@
           <Collapsible heading={project.heading} content={project.content}/>
         {/each}
       </div>
+    </section>
+
+    <section id="three">
+      <div class="education">
+        <h1>
+          Education
+        </h1>
+        <div class="page3">
+          {#each schools as school}
+            <Card heading={school.heading} degree={school.degree} content={school.content}/>
+          {/each}
+        </div>
+      </div>
       <div class="footer" id="footer">
         <Footer />
       </div>
     </section>
   </div>
-
 </body>
 
 <style>
@@ -79,6 +93,7 @@
   h1 {
     font-family: "Source Code Pro", sans-serif;
     font-size: 2.5rem;
+    color: white;
   }
 
   .wrapper {
@@ -119,12 +134,6 @@
     height: 75vh;
   }
 
-  .two {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
   .projects{
     display: flex;
     flex-direction: column;
@@ -145,12 +154,32 @@
 
   #two {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   #footer {
     position: absolute;
     bottom: 0;
     display: flex;
+    padding-left: 2vw;
+  }
+
+  #three {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .page3 {
+    justify-content: space-evenly;
+  }
+
+  .education {
+    display: flex;
+    flex-direction: column;
   }
 
   /* width */

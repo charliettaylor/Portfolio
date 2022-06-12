@@ -1,5 +1,5 @@
 <script>
-  const titles = ['Home', 'Projects', 'Contact', 'About'];
+  const titles = [['Home', '#one'], ['Projects', '#two'], ['Contact', '#two'], ['About', '#two']];
 </script>
 
 <svelte:head>
@@ -8,8 +8,8 @@
 
 <div class="header">
   {#each titles as title}
-    <li><a href="{title}.asp">
-      {title}
+    <li><a href={title[1]}>
+      {title[0]}
     </a></li>
   {/each}
 </div>
