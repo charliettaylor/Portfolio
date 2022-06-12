@@ -13,7 +13,7 @@
 <style>
 	p {
 		font-family: "Source Code Pro", sans-serif;
-		color: black;
+		color: var(--left);
 		font-size: 1rem;
 		padding: 0.3rem 0.5rem 0.3rem 0.5rem;
 	}
@@ -23,10 +23,10 @@
 		justify-content: space-between;
 		align-items: center;
 		border: none;
-		background: ivory;
+		background: var(--text);
 		display: flex;
 		font-family: "Source Code Pro", sans-serif;
-		color: black;
+		color: var(--left);
 		font-size: 1.75rem;
 		cursor: pointer;
 		margin: 0;
@@ -35,12 +35,12 @@
 
 	button:hover {
 		background-color: var(--left);
-		color: lime;
+		color: var(--text);
 	}
 
 	button:active {
 		background-color: var(--left);
-		color: lime;
+		color: var(--text);
 	}
 
 	.heading {
@@ -48,13 +48,13 @@
 	}
 
 	.inside {
-		background-color: ivory;
+		background-color: var(--text);
 		width: 58.9vw;
 		/* padding: 0.5rem; */
 		text-align: left;
 		height: auto;
 		margin: 0;
-		margin-bottom: 1em;
+		/* margin-bottom: 1em; */
 		padding-right: 0;
 	}
 
@@ -66,6 +66,9 @@
     display: flex;
 		flex-direction: column;
 		width: 60vw;
+		border: 0.05rem;
+		border-style: solid;
+		border-color: var(--left);
 	}
 
 	.accordion .inside {
@@ -78,7 +81,7 @@
 	
 	.active {
 		background-color: var(--left);
-		color: lime;
+		color: var(--text);
 	}
 </style>
 

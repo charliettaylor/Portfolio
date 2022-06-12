@@ -14,9 +14,9 @@
 <style>
   .name {
     font-family: "Source Code Pro", sans-serif;
-    font-size: 4vw;
+    font-size: calc(12px + 4vw);
     text-decoration: none;
-    color: white;
+    color: var(--text);
     text-align: left;
   }
 </style>

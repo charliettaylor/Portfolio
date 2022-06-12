@@ -4,7 +4,7 @@
 
 <script lang="ts">
 	export let heading: String;
-  export let degree: String;
+  export let subheading: String;
 	export let content: String;
 </script>
 
@@ -13,7 +13,7 @@
     {heading}
   </h2>
   <h3>
-    {degree}
+    {subheading}
   </h3>
   <p>
     {content}
@@ -22,16 +22,16 @@
 
 <style>
   .card {
-    color: ivory;
+    color: var(--text);
     font-family: "Source Code Pro", sans-serif;
     border: 0.1rem;
-    border-color: ivory;
+    border-color: var(--text);
     border-style: solid;
     border-radius: 0.5rem;
     padding: 1rem;
     margin: 0.5rem;
     background-color: var(--left);
-    width: 50vw;
+    width: 60vw;
   }
 
   p {

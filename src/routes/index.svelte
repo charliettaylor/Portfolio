@@ -11,6 +11,7 @@
 
   import { projects } from "./projects";
   import { schools } from "./schools";
+import { jobs } from "./jobs";
 </script>
 
 <title>
@@ -49,13 +50,26 @@
     </section>
 
     <section id="three">
+      <div class="jobs">
+        <h1>
+          Work Experience
+        </h1>
+        <div class="page3">
+          {#each jobs as job}
+            <Card heading={job.heading} subheading={job.subheading} content={job.content}/>
+          {/each}
+        </div>
+      </div>
+    </section>
+
+    <section id="four">
       <div class="education">
         <h1>
           Education
         </h1>
-        <div class="page3">
+        <div class="page4">
           {#each schools as school}
-            <Card heading={school.heading} degree={school.degree} content={school.content}/>
+            <Card heading={school.heading} subheading={school.subheading} content={school.content}/>
           {/each}
         </div>
       </div>
@@ -68,8 +82,10 @@
 
 <style>
   :root {
-    --left: #051622;
-    --right: #E40C2B;
+    --left: #732D28;
+    --right: #C24C43;
+    --text: #FFEADB;
+    --flair: #5B7B65;
   }
 
   body {
@@ -77,7 +93,7 @@
     margin: 0;
     background: linear-gradient(
       to right,
-      var(--left) 0%, 
+      var(--left) 0%,
       var(--left) 50%,
       var(--right) 50%,
       var(--right) 100%
@@ -93,7 +109,7 @@
   h1 {
     font-family: "Source Code Pro", sans-serif;
     font-size: 2.5rem;
-    color: white;
+    color: var(--text);
   }
 
   .wrapper {
@@ -118,7 +134,7 @@
 
   .left {
     text-align: center;
-    color: white;
+    color: var(--text);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,7 +143,7 @@
 
   .right {
     text-align: center;
-    color: white;
+    color: var(--text);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,13 +155,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: ivory;
+    color: var(--text);
     position: relative;
   }
 
   .page2 {
     text-align: center;
-    color: white;
+    color: var(--text);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,7 +193,23 @@
     justify-content: space-evenly;
   }
 
+  #four {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .page4 {
+    justify-content: space-evenly;
+  }
+
   .education {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .jobs {
     display: flex;
     flex-direction: column;
   }

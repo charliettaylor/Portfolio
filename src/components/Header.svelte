@@ -29,9 +29,9 @@
 
   a {
     font-family: "Source Code Pro", sans-serif;
-    font-size:calc(8px + 0.75vw);
+    font-size: calc(8px + 0.75vw);
     text-decoration: none;
-    color: white;
+    color: var(--text);
     padding-top: 10px;
   }
 </style>

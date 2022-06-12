@@ -13,13 +13,14 @@
     position: relative;
     bottom: 0px;
     padding: 0.25vh 2.5vw 0.25vh 2.5vw;
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
+    background-color: var(--flair);
     align-items: center;
     display: flex;
   }
 
   p {
-    color: ivory;
+    color: var(--text);
     font-family: "Source Code Pro", sans-serif;
   }
 </style>
