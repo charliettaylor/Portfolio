@@ -66,9 +66,6 @@
     display: flex;
 		flex-direction: column;
 		width: 60vw;
-		border: 0.05rem;
-		border-style: solid;
-		border-color: var(--left);
 	}
 
 	.accordion .inside {
