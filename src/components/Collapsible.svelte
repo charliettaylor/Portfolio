@@ -1,18 +1,40 @@
-<svelte:head>
-  <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet"> 
-</svelte:head>
-
 <script lang="ts">
-	import { slide } from "svelte/transition";
+	import { slide } from 'svelte/transition';
 	export let heading: String;
 	export let content: String;
 	let isOpen = false;
-	const toggle = () => isOpen = !isOpen;
+	const toggle = () => (isOpen = !isOpen);
 </script>
+
+<svelte:head>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
+		rel="stylesheet"
+	/>
+</svelte:head>
+
+<div class="accordion">
+	<button class={isOpen ? 'active' : ''} on:click={toggle} aria-expanded={isOpen}>
+		<span class="heading">{heading}</span>
+		{#if isOpen}
+			<span class="icon">&minus;</span>
+		{:else}
+			<span class="icon">&plus;</span>
+		{/if}
+	</button>
+
+	{#if isOpen}
+		<span class="inside" transition:slide={{ duration: 300 }}>
+			<p>
+				{content}
+			</p>
+		</span>
+	{/if}
+</div>
 
 <style>
 	p {
-		font-family: "Source Code Pro", sans-serif;
+		font-family: 'Source Code Pro', sans-serif;
 		color: var(--left);
 		font-size: 1rem;
 		padding: 0.3rem 0.5rem 0.3rem 0.5rem;
@@ -25,7 +47,7 @@
 		border: none;
 		background: var(--text);
 		display: flex;
-		font-family: "Source Code Pro", sans-serif;
+		font-family: 'Source Code Pro', sans-serif;
 		color: var(--left);
 		font-size: 1.75rem;
 		cursor: pointer;
@@ -63,7 +85,7 @@
 	}
 
 	.accordion {
-    display: flex;
+		display: flex;
 		flex-direction: column;
 		width: 60vw;
 	}
@@ -75,29 +97,9 @@
 	.accordion button {
 		width: 100%;
 	}
-	
+
 	.active {
 		background-color: var(--left);
 		color: var(--text);
 	}
 </style>
-
-<div class="accordion">
-	<button class="{isOpen ? 'active' : ''}" on:click={toggle} aria-expanded={isOpen}>
-		<span class="heading">{heading}</span>
-		{#if isOpen}
-			<span class="icon">&minus;</span>
-		{:else}
-			<span class="icon">&plus;</span>
-		{/if}
-	</button>
-	
-	{#if isOpen}
-		<span class="inside" transition:slide={{ duration: 300 }}>
-			<p>
-				{content}
-			</p>
-		</span>
-	{/if}
-</div>
-

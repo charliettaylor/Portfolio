@@ -1,5 +1,3 @@
-import { clear_loops } from "svelte/internal"
-
 export const jobs = [
   {
     heading: "Junior Software Engineer",
