@@ -248,6 +248,5 @@
 	/* Handle */
 	::-webkit-scrollbar-thumb {
 		background: var(--left);
-		/* border-radius: 20px; */
 	}
 </style>

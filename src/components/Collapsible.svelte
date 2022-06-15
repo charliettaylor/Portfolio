@@ -72,11 +72,9 @@
 	.inside {
 		background-color: var(--text);
 		width: 58.9vw;
-		/* padding: 0.5rem; */
 		text-align: left;
 		height: auto;
 		margin: 0;
-		/* margin-bottom: 1em; */
 		padding-right: 0;
 	}
 
