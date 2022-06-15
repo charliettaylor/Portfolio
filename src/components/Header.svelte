@@ -2,8 +2,8 @@
 	const titles = [
 		['Home', '#one'],
 		['Projects', '#two'],
-		['Contact', '#two'],
-		['About', '#two']
+		['Work', '#three'],
+		['Contact', '#five']
 	];
 </script>
 

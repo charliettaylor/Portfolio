@@ -22,9 +22,9 @@
 <title> Charlie Taylor </title>
 
 <body style="background-color:darkgrey">
-	<div class="wrapper">
+  <div class="wrapper">
 		<section class="one" id="one">
-			<Header />
+      <Header />
 			<div class="row">
 				<div class="column">
 					<div class="left">
@@ -119,6 +119,7 @@
 		width: 100vw;
 		min-height: 100vh;
 		scroll-snap-align: start;
+    scroll-behavior: smooth;
 	}
 
 	h1 {
@@ -208,6 +209,11 @@
 		justify-content: space-evenly;
 	}
 
+  .education {
+		display: flex;
+		flex-direction: column;
+	}
+
 	#four {
 		display: flex;
 		align-items: center;
@@ -219,6 +225,11 @@
 		justify-content: space-evenly;
 	}
 
+  .jobs {
+		display: flex;
+		flex-direction: column;
+	}
+
 	#five {
 		display: flex;
 		align-items: center;
@@ -227,17 +238,9 @@
 	}
 
 	.page5 {
-		display: grid;
-	}
-
-	.education {
 		display: flex;
-		flex-direction: column;
-	}
-
-	.jobs {
-		display: flex;
-		flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 	}
 
 	/* width */
