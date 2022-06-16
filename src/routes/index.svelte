@@ -76,7 +76,7 @@
 
 		<section id="five">
 			<div class="contact">
-				<h1>Contact</h1>
+				<h1 id="contactTitle">Contact</h1>
 				<div class="page5">
 					{#each contacts as contact}
 						<ContactCard
@@ -234,10 +234,19 @@
 		position: relative;
 	}
 
+	.contact {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
 	.page5 {
 		display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+		justify-content: center;
+		width: 50vw;
 	}
 
 	/* width */

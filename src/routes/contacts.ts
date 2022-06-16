@@ -16,5 +16,11 @@ export const contacts = [
 		link: 'mailto:charlie@peekoe.net',
 		image: 'src/images/email.svg',
 		alt: 'Email Symbol'
+	},
+	{
+		name: 'Resume',
+		link: '../../static/resume.pdf',
+		image: '../../static/resume.png',
+		alt: 'Resume Image'
 	}
 ];
