@@ -118,8 +118,6 @@
 	section {
 		width: 100vw;
 		min-height: 100vh;
-		scroll-snap-align: start;
-    scroll-behavior: smooth;
 	}
 
 	h1 {
@@ -131,8 +129,6 @@
 	.wrapper {
 		width: 100vw;
 		height: 100vh;
-		overflow-y: scroll;
-		scroll-snap-type: y mandatory;
 		overflow-x: hidden;
 	}
 
