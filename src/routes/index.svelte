@@ -40,12 +40,12 @@
 		<section id="two">
 			<div class="projects">
 				<h1>Projects</h1>
-			</div>
-			<div class="page2">
-				{#each projects as project}
-					<Collapsible heading={project.heading} content={project.content} />
-				{/each}
-			</div>
+				<div class="page2">
+					{#each projects as project}
+						<Collapsible heading={project.heading} content={project.content} />
+					{/each}
+				</div>
+		</div>
 		</section>
 
 		<section id="three">
@@ -165,9 +165,9 @@
 	.projects {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		color: var(--text);
+		/* justify-content: center; */
+		/* align-items: center;
+		color: var(--text); */
 		position: relative;
 	}
 
@@ -185,6 +185,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-items: center;
 	}
 
 	#footer {
