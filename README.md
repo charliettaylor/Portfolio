@@ -4,8 +4,9 @@
  Currently working on a general layout and color scheme, in addition to getting used to Svelte and improving my CSS skills.
 
 ### Features to include
- - [ ] Home page
- - [ ] Projects section
- - [ ] Contact page
+ - [X] Home page
+ - [X] Projects section
+ - [X] Contact page
  - [ ] About page/section
+ - [ ] Make mobile friendly
  - [ ] Something funny, maybe a game or randomizer
