@@ -17,7 +17,7 @@
 		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
 		rel="stylesheet"
 	/>
-	<link rel="icon" type="image/ico" href="static/favicon.ico" />
+	<link rel="icon" type="image/ico" href="assets/favicon.ico" />
 </svelte:head>
 
 <title> Charlie Taylor </title>
