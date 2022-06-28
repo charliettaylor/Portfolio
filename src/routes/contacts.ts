@@ -2,25 +2,25 @@ export const contacts = [
 	{
 		name: 'GitHub',
 		link: 'https://github.com/Peekoe/',
-		image: 'src/images/github.svg',
+		image: 'assets/github.svg',
 		alt: 'GitHub Logo'
 	},
 	{
 		name: 'LinkedIn',
 		link: 'https://linkedin.com/in/charliettaylor/',
-		image: 'src/images/linkedin.svg',
+		image: 'assets/linkedin.svg',
 		alt: 'LinkedIn Logo'
 	},
   {
 		name: 'Email',
 		link: 'mailto:charlie@peekoe.net',
-		image: 'src/images/email.svg',
+		image: 'assets/email.svg',
 		alt: 'Email Symbol'
 	},
 	{
 		name: 'Resume',
-		link: '../../static/resume.pdf',
-		image: '../../static/resume.png',
+		link: 'assets/resume.pdf',
+		image: 'assets/resume.png',
 		alt: 'Resume Image'
 	}
 ];
