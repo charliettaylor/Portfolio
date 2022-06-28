@@ -17,14 +17,15 @@
 		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
 		rel="stylesheet"
 	/>
+	<link rel="icon" type="image/ico" href="assets/favicon.ico" />
 </svelte:head>
 
 <title> Charlie Taylor </title>
 
 <body style="background-color:darkgrey">
-  <div class="wrapper">
+	<div class="wrapper">
 		<section class="one" id="one">
-      <Header />
+			<Header />
 			<div class="row">
 				<div class="column">
 					<div class="left">
@@ -45,7 +46,7 @@
 						<Collapsible heading={project.heading} content={project.content} />
 					{/each}
 				</div>
-		</div>
+			</div>
 		</section>
 
 		<section id="three">
@@ -206,7 +207,7 @@
 		justify-content: space-evenly;
 	}
 
-  .education {
+	.education {
 		display: flex;
 		flex-direction: column;
 	}
@@ -222,7 +223,7 @@
 		justify-content: space-evenly;
 	}
 
-  .jobs {
+	.jobs {
 		display: flex;
 		flex-direction: column;
 	}
@@ -243,8 +244,8 @@
 
 	.page5 {
 		display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+		flex-direction: row;
+		flex-wrap: wrap;
 		justify-content: center;
 		width: 50vw;
 	}
