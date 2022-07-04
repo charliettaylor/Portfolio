@@ -1,4 +1,12 @@
-<footer>
+<script>
+	let innerWidth = 0
+	let innerHeight = 0
+	$: mobile = innerWidth < 800;
+</script>
+
+<svelte:window bind:innerWidth bind:innerHeight />
+
+<footer class={!mobile ? '' : 'mobile'}>
 	<p>Made with ❤ by Charlie (●'◡'●)</p>
 </footer>
 
@@ -16,5 +24,9 @@
 
 	p {
 		color: var(--text);
+	}
+
+	.mobile {
+		justify-content: center;
 	}
 </style>

@@ -12,6 +12,10 @@
 	import { jobs } from './jobs';
 	import { contacts } from './contacts';
 
+
+	let innerWidth = 0
+	let innerHeight = 0
+	$: mobile = innerWidth < 800;
 </script>
 
 <svelte:head>
@@ -21,6 +25,8 @@
 	/>
 	<link rel="icon" type="image/ico" href="assets/favicon.ico" />
 </svelte:head>
+
+<svelte:window bind:innerWidth bind:innerHeight />
 
 <title> Charlie Taylor </title>
 
@@ -43,7 +49,7 @@
 		<section id="two">
 			<div class="projects">
 				<h1 class="header">Projects</h1>
-				<div class="page2">
+				<div class={!mobile ? "page2" : "page2 mobile"}>
 					{#each projects as project}
 						<Collapsible heading={project.heading} content={project.content} link={project.link}/>
 					{/each}
@@ -54,10 +60,16 @@
 		<section id="three">
 			<div class="jobs">
 				<h1 class="header">Work Experience</h1>
-				<div class="page3">
-					{#each jobs as job}
-						<Experience heading={job.heading} subheading={job.subheading} content={job.content} date={job.date}/>
-					{/each}
+				<div class={!mobile ? "page3" : "page3 mobile"}>
+					{#if !mobile}
+						{#each jobs as job}
+							<Experience heading={job.heading} subheading={job.subheading} content={job.content} date={job.date}/>
+						{/each}
+					{:else}
+						{#each jobs as job}
+							<Card heading={job.heading} subheading={job.subheading} content={job.content} />
+						{/each}
+					{/if}
 				</div>
 			</div>
 		</section>
@@ -65,7 +77,7 @@
 		<section id="four">
 			<div class="education">
 				<h1 class="header">Education</h1>
-				<div class="page4">
+				<div class={!mobile ? "page4" : "page4 mobile"}>
 					{#each schools as school}
 						<Card
 							heading={school.heading}
@@ -80,7 +92,7 @@
 		<section id="five">
 			<div class="contact">
 				<h1 id="contactTitle" class="header">Contact</h1>
-				<div class="page5">
+				<div class={!mobile ? "page5" : "page5 mobile"}>
 					{#each contacts as contact}
 						<ContactCard
 							name={contact.name}
@@ -106,10 +118,6 @@
 		--flair: #5b7b65;
 	}
 
-	@media(min-width:768px) {
-		
-	}
-
 	body {
 		padding: 0;
 		margin: 0;
@@ -130,7 +138,7 @@
 	}
 
 	h1 {
-		font-size: 2.5rem;
+		font-size: 2.5em;
 		color: var(--text);
 	}
 
@@ -271,5 +279,9 @@
 	/* Handle */
 	::-webkit-scrollbar-thumb {
 		background: var(--left);
+	}
+
+	.mobile {
+		width: 90vw;
 	}
 </style>
