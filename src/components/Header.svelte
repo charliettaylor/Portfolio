@@ -20,10 +20,9 @@
 <style>
 	.header {
 		display: flex;
-		padding: 80px;
+		padding: 2rem;
 		padding-left: 5vw;
 		padding-right: 5vw;
-		margin-top: -3em;
 		justify-content: space-evenly;
 		align-items: center;
 		width: auto;
@@ -34,5 +33,6 @@
 		text-decoration: none;
 		color: var(--text);
 		padding-top: 10px;
+		font-size: 1.5rem;
 	}
 </style>

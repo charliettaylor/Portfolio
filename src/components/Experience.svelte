@@ -18,9 +18,9 @@
   </div>
   <div class="column">
     <div class="right">
-      <h4 class="date">
+      <h3 class="date">
         {date}
-      </h4>
+      </h3>
       <p>
         {content}
       </p>

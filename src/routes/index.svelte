@@ -32,18 +32,24 @@
 
 <body>
 	<div class="wrapper">
-		<section class="one" id="one">
-			<Header />
-			<div class="row">
-				<div class="column">
-					<div class="left">
-						<Nameplate />
+		<Header />
+		<section class={!mobile ? "one" : "oneMobile"} id="one">
+			{#if !mobile}
+				<div class="row">
+					<div class="column">
+						<div class="left">
+							<Nameplate />
+						</div>
+					</div>
+					<div class="column">
+						<div class="right" />
 					</div>
 				</div>
-				<div class="column">
-					<div class="right" />
+			{:else}
+				<div class="nameplateMobile">
+					<Nameplate />
 				</div>
-			</div>
+			{/if}
 		</section>
 
 		<section id="two">
@@ -107,6 +113,7 @@
 				<Footer />
 			</div>
 		</section>
+		
 	</div>
 </body>
 
@@ -133,7 +140,7 @@
 
 	section {
 		width: 100vw;
-		min-height: 100vh;
+		min-height: 90vh;
 		height: auto;
 	}
 
@@ -176,6 +183,12 @@
 		justify-content: center;
 		align-items: center;
 		height: 75vh;
+	}
+
+	.oneMobile {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.projects {

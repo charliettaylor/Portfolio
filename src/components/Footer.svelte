@@ -13,10 +13,10 @@
 <style>
 	footer {
 		height: 5vh;
-		width: 100vw;
+		width: 105vw;
 		position: relative;
 		bottom: 0px;
-		padding: 0.25vh 2.5vw 0.25vh 2.5vw;
+		margin-top: 1rem;
 		background-color: var(--flair);
 		align-items: center;
 		display: flex;
@@ -24,6 +24,7 @@
 
 	p {
 		color: var(--text);
+		padding: 0.25vh 2.5vw 0.25vh 2.5vw;
 	}
 
 	.mobile {
