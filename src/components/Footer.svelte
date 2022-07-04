@@ -1,10 +1,3 @@
-<svelte:head>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
-		rel="stylesheet"
-	/>
-</svelte:head>
-
 <footer>
 	<p>Made with ❤ by Charlie (●'◡'●)</p>
 </footer>
@@ -23,6 +16,5 @@
 
 	p {
 		color: var(--text);
-		font-family: 'Source Code Pro', sans-serif;
 	}
 </style>

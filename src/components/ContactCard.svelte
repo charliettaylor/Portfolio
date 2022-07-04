@@ -5,13 +5,6 @@
 	export let alt: string;
 </script>
 
-<svelte:head>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
-		rel="stylesheet"
-	/>
-</svelte:head>
-
 <a href={link}>
 	<div class="btn">
 		<img src={image} {alt} />
@@ -26,7 +19,6 @@
 <style>
 	.btn {
 		color: var(--text);
-		font-family: 'Source Code Pro', sans-serif;
 		border: 0.1rem;
 		border-color: var(--text);
 		border-style: solid;

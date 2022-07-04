@@ -7,13 +7,6 @@
 	];
 </script>
 
-<svelte:head>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
-		rel="stylesheet"
-	/>
-</svelte:head>
-
 <div class="header">
 	{#each titles as title}
 		<li>
@@ -38,8 +31,6 @@
 	}
 
 	a {
-		font-family: 'Source Code Pro', sans-serif;
-		font-size: calc(8px + 0.75vw);
 		text-decoration: none;
 		color: var(--text);
 		padding-top: 10px;

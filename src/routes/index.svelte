@@ -5,11 +5,13 @@
 	import Collapsible from '../components/Collapsible.svelte';
 	import Card from '../components/Card.svelte';
 	import ContactCard from '../components/ContactCard.svelte';
+	import Experience from '../components/Experience.svelte';
 
 	import { projects } from './projects';
 	import { schools } from './schools';
 	import { jobs } from './jobs';
 	import { contacts } from './contacts';
+
 </script>
 
 <svelte:head>
@@ -22,7 +24,7 @@
 
 <title> Charlie Taylor </title>
 
-<body style="background-color:darkgrey">
+<body>
 	<div class="wrapper">
 		<section class="one" id="one">
 			<Header />
@@ -43,7 +45,7 @@
 				<h1>Projects</h1>
 				<div class="page2">
 					{#each projects as project}
-						<Collapsible heading={project.heading} content={project.content} />
+						<Collapsible heading={project.heading} content={project.content} link={project.link}/>
 					{/each}
 				</div>
 			</div>
@@ -54,7 +56,7 @@
 				<h1>Work Experience</h1>
 				<div class="page3">
 					{#each jobs as job}
-						<Card heading={job.heading} subheading={job.subheading} content={job.content} />
+						<Experience heading={job.heading} subheading={job.subheading} content={job.content} date={job.date}/>
 					{/each}
 				</div>
 			</div>
@@ -104,9 +106,14 @@
 		--flair: #5b7b65;
 	}
 
+	@media(min-width:768px) {
+		
+	}
+
 	body {
 		padding: 0;
 		margin: 0;
+		font-family: "Source Code Pro", sans-serif;
 		background: linear-gradient(
 			to right,
 			var(--left) 0%,
@@ -119,10 +126,10 @@
 	section {
 		width: 100vw;
 		min-height: 100vh;
+		height: auto;
 	}
 
 	h1 {
-		font-family: 'Source Code Pro', sans-serif;
 		font-size: 2.5rem;
 		color: var(--text);
 	}
@@ -179,6 +186,7 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		width: 60vw;
 	}
 
 	#two {
@@ -205,6 +213,7 @@
 
 	.page3 {
 		justify-content: space-evenly;
+		width: 60vw;
 	}
 
 	.education {
@@ -221,6 +230,7 @@
 
 	.page4 {
 		justify-content: space-evenly;
+		width: 60vw;
 	}
 
 	.jobs {
