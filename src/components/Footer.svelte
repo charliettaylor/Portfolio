@@ -1,21 +1,22 @@
-<svelte:head>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
-		rel="stylesheet"
-	/>
-</svelte:head>
+<script>
+	let innerWidth = 0
+	let innerHeight = 0
+	$: mobile = innerWidth < 800;
+</script>
 
-<footer>
+<svelte:window bind:innerWidth bind:innerHeight />
+
+<footer class={!mobile ? '' : 'mobile'}>
 	<p>Made with ❤ by Charlie (●'◡'●)</p>
 </footer>
 
 <style>
 	footer {
 		height: 5vh;
-		width: 100vw;
+		width: 105vw;
 		position: relative;
 		bottom: 0px;
-		padding: 0.25vh 2.5vw 0.25vh 2.5vw;
+		margin-top: 1rem;
 		background-color: var(--flair);
 		align-items: center;
 		display: flex;
@@ -23,6 +24,10 @@
 
 	p {
 		color: var(--text);
-		font-family: 'Source Code Pro', sans-serif;
+		padding: 0.25vh 2.5vw 0.25vh 2.5vw;
+	}
+
+	.mobile {
+		justify-content: center;
 	}
 </style>

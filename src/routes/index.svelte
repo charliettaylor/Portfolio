@@ -5,11 +5,17 @@
 	import Collapsible from '../components/Collapsible.svelte';
 	import Card from '../components/Card.svelte';
 	import ContactCard from '../components/ContactCard.svelte';
+	import Experience from '../components/Experience.svelte';
 
 	import { projects } from './projects';
 	import { schools } from './schools';
 	import { jobs } from './jobs';
 	import { contacts } from './contacts';
+
+
+	let innerWidth = 0
+	let innerHeight = 0
+	$: mobile = innerWidth < 800;
 </script>
 
 <svelte:head>
@@ -20,30 +26,38 @@
 	<link rel="icon" type="image/ico" href="assets/favicon.ico" />
 </svelte:head>
 
+<svelte:window bind:innerWidth bind:innerHeight />
+
 <title> Charlie Taylor </title>
 
-<body style="background-color:darkgrey">
+<body>
 	<div class="wrapper">
-		<section class="one" id="one">
-			<Header />
-			<div class="row">
-				<div class="column">
-					<div class="left">
-						<Nameplate />
+		<Header />
+		<section class={!mobile ? "one" : "oneMobile"} id="one">
+			{#if !mobile}
+				<div class="row">
+					<div class="column">
+						<div class="left">
+							<Nameplate />
+						</div>
+					</div>
+					<div class="column">
+						<div class="right" />
 					</div>
 				</div>
-				<div class="column">
-					<div class="right" />
+			{:else}
+				<div class="nameplateMobile">
+					<Nameplate />
 				</div>
-			</div>
+			{/if}
 		</section>
 
 		<section id="two">
 			<div class="projects">
-				<h1>Projects</h1>
-				<div class="page2">
+				<h1 class="header">Projects</h1>
+				<div class={!mobile ? "page2" : "page2 mobile"}>
 					{#each projects as project}
-						<Collapsible heading={project.heading} content={project.content} />
+						<Collapsible heading={project.heading} content={project.content} link={project.link}/>
 					{/each}
 				</div>
 			</div>
@@ -51,19 +65,25 @@
 
 		<section id="three">
 			<div class="jobs">
-				<h1>Work Experience</h1>
-				<div class="page3">
-					{#each jobs as job}
-						<Card heading={job.heading} subheading={job.subheading} content={job.content} />
-					{/each}
+				<h1 class="header">Work Experience</h1>
+				<div class={!mobile ? "page3" : "page3 mobile"}>
+					{#if !mobile}
+						{#each jobs as job}
+							<Experience heading={job.heading} subheading={job.subheading} content={job.content} date={job.date}/>
+						{/each}
+					{:else}
+						{#each jobs as job}
+							<Card heading={job.heading} subheading={job.subheading} content={job.content} />
+						{/each}
+					{/if}
 				</div>
 			</div>
 		</section>
 
 		<section id="four">
 			<div class="education">
-				<h1>Education</h1>
-				<div class="page4">
+				<h1 class="header">Education</h1>
+				<div class={!mobile ? "page4" : "page4 mobile"}>
 					{#each schools as school}
 						<Card
 							heading={school.heading}
@@ -77,8 +97,8 @@
 
 		<section id="five">
 			<div class="contact">
-				<h1 id="contactTitle">Contact</h1>
-				<div class="page5">
+				<h1 id="contactTitle" class="header">Contact</h1>
+				<div class={!mobile ? "page5" : "page5 mobile"}>
 					{#each contacts as contact}
 						<ContactCard
 							name={contact.name}
@@ -93,6 +113,7 @@
 				<Footer />
 			</div>
 		</section>
+		
 	</div>
 </body>
 
@@ -107,6 +128,7 @@
 	body {
 		padding: 0;
 		margin: 0;
+		font-family: "Source Code Pro", sans-serif;
 		background: linear-gradient(
 			to right,
 			var(--left) 0%,
@@ -118,12 +140,12 @@
 
 	section {
 		width: 100vw;
-		min-height: 100vh;
+		min-height: 90vh;
+		height: auto;
 	}
 
 	h1 {
-		font-family: 'Source Code Pro', sans-serif;
-		font-size: 2.5rem;
+		font-size: 2.5em;
 		color: var(--text);
 	}
 
@@ -163,12 +185,15 @@
 		height: 75vh;
 	}
 
+	.oneMobile {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
 	.projects {
 		display: flex;
 		flex-direction: column;
-		/* justify-content: center; */
-		/* align-items: center;
-		color: var(--text); */
 		position: relative;
 	}
 
@@ -179,6 +204,7 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		width: 60vw;
 	}
 
 	#two {
@@ -205,8 +231,13 @@
 
 	.page3 {
 		justify-content: space-evenly;
+		width: 60vw;
 	}
 
+	.header {
+		padding-bottom: 2rem;
+		border-bottom: 0.5rem solid var(--text);
+	}
 	.education {
 		display: flex;
 		flex-direction: column;
@@ -221,6 +252,7 @@
 
 	.page4 {
 		justify-content: space-evenly;
+		width: 60vw;
 	}
 
 	.jobs {
@@ -237,16 +269,17 @@
 
 	.contact {
 		display: flex;
-		justify-content: center;
 		align-items: center;
+		align-content: center;
 		flex-direction: column;
 	}
 
 	.page5 {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		flex-wrap: wrap;
 		justify-content: center;
+		align-items: center;
 		width: 50vw;
 	}
 
@@ -258,5 +291,9 @@
 	/* Handle */
 	::-webkit-scrollbar-thumb {
 		background: var(--left);
+	}
+
+	.mobile {
+		width: 90vw;
 	}
 </style>

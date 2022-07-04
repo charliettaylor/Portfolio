@@ -3,17 +3,16 @@
 	export let link: string;
 	export let image: string;
 	export let alt: string;
+
+	let innerWidth = 0
+	let innerHeight = 0
+	$: mobile = innerWidth < 800;
 </script>
 
-<svelte:head>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
-		rel="stylesheet"
-	/>
-</svelte:head>
+<svelte:window bind:innerWidth bind:innerHeight />
 
 <a href={link}>
-	<div class="btn">
+	<div class={!mobile ? "btn" : "btn mobile"}>
 		<img src={image} {alt} />
 		<span class="title">
 			<h2 class="heading">
@@ -26,7 +25,6 @@
 <style>
 	.btn {
 		color: var(--text);
-		font-family: 'Source Code Pro', sans-serif;
 		border: 0.1rem;
 		border-color: var(--text);
 		border-style: solid;
@@ -34,7 +32,7 @@
 		padding: 1rem;
 		margin: 0.5rem;
 		background-color: var(--left);
-		width: 15vw;
+		width: 20vw;
 		display: flex;
 		align-items: center;
 	}
@@ -54,5 +52,9 @@
 
 	img {
 		width: 4rem;
+	}
+
+	.mobile {
+		width: 80vw;
 	}
 </style>

@@ -5,19 +5,18 @@
 		['Work', '#three'],
 		['Contact', '#five']
 	];
+
+	let innerWidth = 0
+	let innerHeight = 0
+	$: mobile = innerWidth < 800;
 </script>
 
-<svelte:head>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
-		rel="stylesheet"
-	/>
-</svelte:head>
+<svelte:window bind:innerWidth bind:innerHeight />
 
 <div class="header">
 	{#each titles as title}
 		<li>
-			<a href={title[1]}>
+			<a class={!mobile ? "" : "mobile"} href={title[1]}>
 				{title[0]}
 			</a>
 		</li>
@@ -27,10 +26,9 @@
 <style>
 	.header {
 		display: flex;
-		padding: 80px;
+		padding: 2rem;
 		padding-left: 5vw;
 		padding-right: 5vw;
-		margin-top: -3em;
 		justify-content: space-evenly;
 		align-items: center;
 		width: auto;
@@ -38,10 +36,13 @@
 	}
 
 	a {
-		font-family: 'Source Code Pro', sans-serif;
-		font-size: calc(8px + 0.75vw);
 		text-decoration: none;
 		color: var(--text);
 		padding-top: 10px;
+		font-size: 1.5rem;
+	}
+
+	.mobile {
+		font-size: 1rem;
 	}
 </style>

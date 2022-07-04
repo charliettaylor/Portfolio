@@ -1,25 +1,44 @@
-<svelte:head>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
-		rel="stylesheet"
-	/>
-</svelte:head>
+<script>
+	let innerWidth = 0
+	let innerHeight = 0
+	$: mobile = innerWidth < 800;
+</script>
+
+<svelte:window bind:innerWidth bind:innerHeight />
 
 <div>
-	<h1 class="name">
+	<h1 class={!mobile ? "name" : "name mobile"}>
+		<h1>
+			Hey, I'm Charlie!
+			<br /> 
+		</h1>
 		<p>
-			Hey,
-			<br /> I'm Charlie!
+			Aspiring Backend Developer
 		</p>
 	</h1>
 </div>
 
 <style>
 	.name {
-		font-family: 'Source Code Pro', sans-serif;
-		font-size: calc(12px + 4vw);
+		font-size: 3rem;
 		text-decoration: none;
 		color: var(--text);
 		text-align: left;
+	}
+
+	p {
+		font-size: 2rem;
+	}
+
+	.mobile {
+		text-align: center;
+	}
+
+	.mobile h1 {
+		font-size: 2rem;
+	}
+
+	.mobile p {
+		font-size: 1rem;
 	}
 </style>

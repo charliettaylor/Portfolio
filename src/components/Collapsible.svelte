@@ -2,6 +2,7 @@
 	import { slide } from 'svelte/transition';
 	export let heading: String;
 	export let content: String;
+	export let link: string;
 	let isOpen = false;
 	const toggle = () => (isOpen = !isOpen);
 </script>
@@ -28,26 +29,27 @@
 			<p>
 				{content}
 			</p>
+			<div class="link">
+				<a href={link} class="link-text" target="_blank" rel="noopener noreferrer">
+					Link
+				</a>
+			</div>
 		</span>
 	{/if}
 </div>
 
 <style>
 	p {
-		font-family: 'Source Code Pro', sans-serif;
 		color: var(--left);
-		font-size: 1rem;
-		padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+		padding: 0.3rem 1.5rem;
 	}
 
 	button {
-		width: 60vw;
 		justify-content: space-between;
 		align-items: center;
 		border: none;
 		background: var(--text);
 		display: flex;
-		font-family: 'Source Code Pro', sans-serif;
 		color: var(--left);
 		font-size: 1.75rem;
 		cursor: pointer;
@@ -65,13 +67,24 @@
 		color: var(--text);
 	}
 
+	a:link {
+		text-decoration: none;
+		color: var(--left);
+	}
+
+	a:visited {
+		text-decoration: none;
+		color: var(--left);
+	}
+
 	.heading {
 		padding: 0.1rem;
+		/* Heading will not inherit body font for some reason, investigate later */
+		font-family: 'Source Code Pro', sans-serif;
 	}
 
 	.inside {
 		background-color: var(--text);
-		width: 58.9vw;
 		text-align: left;
 		height: auto;
 		margin: 0;
@@ -79,13 +92,9 @@
 	}
 
 	.accordion {
-		display: block;
-	}
-
-	.accordion {
 		display: flex;
 		flex-direction: column;
-		width: 60vw;
+		width: 100%;
 	}
 
 	.accordion .inside {
@@ -99,5 +108,24 @@
 	.active {
 		background-color: var(--left);
 		color: var(--text);
+	}
+
+	.link {
+		background-color: var(--text);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--left);
+		font-size: 1.5rem;
+		margin: 0;
+		padding: 0.5em;
+	}
+
+	.link-text {
+		color: var(--left);
+	}
+
+	.link-text:hover {
+		color: var(--flair);
 	}
 </style>

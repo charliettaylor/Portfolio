@@ -14,7 +14,8 @@ export const projects = [
 	{
 		heading: '💻 PEEKOE.NET',
 		content:
-			"You're looking at it now! Built with Svelte and started in the Summer of 2022, hopefully will keep growing as I learn more about frontend development."
+			"You're looking at it now! Built with Svelte and started in the Summer of 2022, hopefully will keep growing as I learn more about frontend development.",
+		link: 'https://github.com/Peekoe/Portfolio'
 	},
 	{
 		heading: '🌙 NITEMPO',
