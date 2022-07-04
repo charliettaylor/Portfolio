@@ -7,6 +7,13 @@
 	const toggle = () => (isOpen = !isOpen);
 </script>
 
+<svelte:head>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
+		rel="stylesheet"
+	/>
+</svelte:head>
+
 <div class="accordion">
 	<button class={isOpen ? 'active' : ''} on:click={toggle} aria-expanded={isOpen}>
 		<span class="heading">{heading}</span>
@@ -72,6 +79,8 @@
 
 	.heading {
 		padding: 0.1rem;
+		/* Heading will not inherit body font for some reason, investigate later */
+		font-family: 'Source Code Pro', sans-serif;
 	}
 
 	.inside {

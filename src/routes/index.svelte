@@ -42,7 +42,7 @@
 
 		<section id="two">
 			<div class="projects">
-				<h1>Projects</h1>
+				<h1 class="header">Projects</h1>
 				<div class="page2">
 					{#each projects as project}
 						<Collapsible heading={project.heading} content={project.content} link={project.link}/>
@@ -53,7 +53,7 @@
 
 		<section id="three">
 			<div class="jobs">
-				<h1>Work Experience</h1>
+				<h1 class="header">Work Experience</h1>
 				<div class="page3">
 					{#each jobs as job}
 						<Experience heading={job.heading} subheading={job.subheading} content={job.content} date={job.date}/>
@@ -64,7 +64,7 @@
 
 		<section id="four">
 			<div class="education">
-				<h1>Education</h1>
+				<h1 class="header">Education</h1>
 				<div class="page4">
 					{#each schools as school}
 						<Card
@@ -79,7 +79,7 @@
 
 		<section id="five">
 			<div class="contact">
-				<h1 id="contactTitle">Contact</h1>
+				<h1 id="contactTitle" class="header">Contact</h1>
 				<div class="page5">
 					{#each contacts as contact}
 						<ContactCard
@@ -173,9 +173,6 @@
 	.projects {
 		display: flex;
 		flex-direction: column;
-		/* justify-content: center; */
-		/* align-items: center;
-		color: var(--text); */
 		position: relative;
 	}
 
@@ -216,6 +213,11 @@
 		width: 60vw;
 	}
 
+	.header {
+		padding-bottom: 2rem;
+		border-bottom: 0.5rem solid var(--text);
+	}
+
 	.education {
 		display: flex;
 		flex-direction: column;
@@ -247,16 +249,17 @@
 
 	.contact {
 		display: flex;
-		justify-content: center;
 		align-items: center;
+		align-content: center;
 		flex-direction: column;
 	}
 
 	.page5 {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		flex-wrap: wrap;
 		justify-content: center;
+		align-items: center;
 		width: 50vw;
 	}
 
