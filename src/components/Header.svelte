@@ -5,12 +5,18 @@
 		['Work', '#three'],
 		['Contact', '#five']
 	];
+
+	let innerWidth = 0
+	let innerHeight = 0
+	$: mobile = innerWidth < 800;
 </script>
+
+<svelte:window bind:innerWidth bind:innerHeight />
 
 <div class="header">
 	{#each titles as title}
 		<li>
-			<a href={title[1]}>
+			<a class={!mobile ? "" : "mobile"} href={title[1]}>
 				{title[0]}
 			</a>
 		</li>
@@ -34,5 +40,9 @@
 		color: var(--text);
 		padding-top: 10px;
 		font-size: 1.5rem;
+	}
+
+	.mobile {
+		font-size: 1rem;
 	}
 </style>
