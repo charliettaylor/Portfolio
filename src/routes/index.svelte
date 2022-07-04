@@ -238,7 +238,6 @@
 		padding-bottom: 2rem;
 		border-bottom: 0.5rem solid var(--text);
 	}
-
 	.education {
 		display: flex;
 		flex-direction: column;
