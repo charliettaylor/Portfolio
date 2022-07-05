@@ -24,6 +24,7 @@
 		text-decoration: none;
 		color: var(--text);
 		text-align: left;
+		margin: 1rem;
 	}
 
 	p {
