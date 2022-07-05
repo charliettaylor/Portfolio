@@ -119,7 +119,7 @@
 
 <style>
 	:root {
-		--left: blue;
+		--left: #732D28;
 		--right: #c24c43;
 		--text: #ffeadb;
 		--flair: #5b7b65;
