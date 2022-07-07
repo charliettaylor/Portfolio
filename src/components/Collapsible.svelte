@@ -58,12 +58,12 @@
 	}
 
 	button:hover {
-		background-color: var(--left);
+		background-color: var(--split);
 		color: var(--text);
 	}
 
 	button:active {
-		background-color: var(--left);
+		background-color: var(--split);
 		color: var(--text);
 	}
 
@@ -106,7 +106,7 @@
 	}
 
 	.active {
-		background-color: var(--left);
+		background-color: var(--split);
 		color: var(--text);
 	}
 
