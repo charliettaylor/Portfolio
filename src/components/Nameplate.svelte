@@ -42,4 +42,20 @@
 	.mobile p {
 		font-size: 1rem;
 	}
+
+	p {
+		font-size: 2rem;
+	}
+
+	.mobile {
+		text-align: center;
+	}
+
+	.mobile h1 {
+		font-size: 2rem;
+	}
+
+	.mobile p {
+		font-size: 1rem;
+	}
 </style>
