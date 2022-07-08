@@ -1,7 +1,7 @@
 <script>
 	let innerWidth = 0
 	let innerHeight = 0
-	$: mobile = innerWidth < 800;
+	$: mobile = innerWidth < 1080;
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
@@ -24,6 +24,7 @@
 		text-decoration: none;
 		color: var(--text);
 		text-align: left;
+		margin: 1rem;
 	}
 
 	p {

@@ -15,7 +15,7 @@
 
 	let innerWidth = 0
 	let innerHeight = 0
-	$: mobile = innerWidth < 800;
+	$: mobile = innerWidth < 1080;
 </script>
 
 <svelte:head>
@@ -119,10 +119,17 @@
 
 <style>
 	:root {
-		--left: #732d28;
-		--right: #c24c43;
+		--left: #5C2420;
+		--right: #973831;
 		--text: #ffeadb;
 		--flair: #5b7b65;
+		--split:  linear-gradient(
+			to right,
+			var(--left) 0%,
+			var(--left) 50%,
+			var(--right) 50%,
+			var(--right) 100%
+		);
 	}
 
 	body {
@@ -281,6 +288,7 @@
 		justify-content: center;
 		align-items: center;
 		width: 50vw;
+		margin-bottom: 4rem;
 	}
 
 	/* width */
