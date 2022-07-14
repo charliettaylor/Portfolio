@@ -123,9 +123,13 @@
 
 	.link-text {
 		color: var(--left);
+		border: 2px solid var(--left);
+		border-radius: 0.25rem;
+		padding: 0.25rem;
 	}
 
 	.link-text:hover {
-		color: var(--flair);
+		background-color: var(--left);
+		color: var(--text);
 	}
 </style>
