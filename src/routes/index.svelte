@@ -33,7 +33,7 @@
 <body>
 	<div class="wrapper">
 		<Header />
-		<section class={!mobile ? "one" : "oneMobile"} id="one">
+		<section class={!mobile ? "one" : "oneMobile"} id="home">
 			{#if !mobile}
 				<div class="row">
 					<div class="column">
@@ -52,7 +52,7 @@
 			{/if}
 		</section>
 
-		<section id="two">
+		<section id="projects">
 			<div class="projects">
 				<h1 class="header">Projects</h1>
 				<div class={!mobile ? "page2" : "page2 mobile"}>
@@ -63,7 +63,7 @@
 			</div>
 		</section>
 
-		<section id="three">
+		<section id="work">
 			<div class="jobs">
 				<h1 class="header">Work Experience</h1>
 				<div class={!mobile ? "page3" : "page3 mobile"}>
@@ -80,7 +80,7 @@
 			</div>
 		</section>
 
-		<section id="four">
+		<section id="education">
 			<div class="education">
 				<h1 class="header">Education</h1>
 				<div class={!mobile ? "page4" : "page4 mobile"}>
@@ -95,7 +95,7 @@
 			</div>
 		</section>
 
-		<section id="five">
+		<section id="contact">
 			<div class="contact">
 				<h1 id="contactTitle" class="header">Contact</h1>
 				<div class={!mobile ? "page5" : "page5 mobile"}>
@@ -214,7 +214,7 @@
 		width: 60vw;
 	}
 
-	#two {
+	#projects {
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -229,7 +229,7 @@
 		padding-left: 2vw;
 	}
 
-	#three {
+	#work {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -250,7 +250,7 @@
 		flex-direction: column;
 	}
 
-	#four {
+	#education {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -267,7 +267,7 @@
 		flex-direction: column;
 	}
 
-	#five {
+	#contact {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -291,12 +291,10 @@
 		margin-bottom: 4rem;
 	}
 
-	/* width */
 	::-webkit-scrollbar {
 		width: 10px;
 	}
 
-	/* Handle */
 	::-webkit-scrollbar-thumb {
 		background: var(--left);
 	}
