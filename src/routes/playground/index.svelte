@@ -1,6 +1,7 @@
 <script lang="js">
   import Welcome from "./Welcome.svelte";
   import Map from './Map.svelte';
+  import Spin from "./Spin.svelte";
 
   $: currTile = 0;
   let [up, down, right, left] = [38, 40, 39, 37];
@@ -77,7 +78,7 @@
     </div>
 
     <div class="tile">
-      <Welcome color="blue" />
+      <Spin />
     </div>
 
     <div class="tile">
