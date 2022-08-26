@@ -61,18 +61,18 @@
 	</div>
 
 	<button on:click={clicked}>
-		<p>Click me! (Space)</p>
+		<p>Click me! <kbd>Space</kbd></p>
 	</button>
 
 	<button on:click={buyUpgrade}>
 		<p>
-			Buy auto-click for {upgradeCost} (U)!
+			Buy auto-click for {upgradeCost} <kbd>U</kbd>!
 		</p>
 	</button>
 
 	<button on:click={buyClickUpgrade}>
 		<p>
-			Buy click upgrade for {clickUpgradeCost} (C)!
+			Buy click upgrade for {clickUpgradeCost} <kbd>C</kbd>!
 		</p>
 	</button>
 </div>

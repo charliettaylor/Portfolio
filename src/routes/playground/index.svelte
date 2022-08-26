@@ -1,8 +1,8 @@
 <script lang="js">
-  import Welcome from "./Welcome.svelte";
-  import Map from './Map.svelte';
-  import Spin from "./Spin.svelte";
-  import Clicker from "./Clicker.svelte";
+  import Welcome from "../../components/Welcome.svelte";
+  import Map from '../../components/Map.svelte';
+  import Spin from "../../components/Spin.svelte";
+  import Clicker from "../../components/Clicker.svelte";
 
   $: currTile = 0;
   let [up, down, right, left] = [38, 40, 39, 37];
