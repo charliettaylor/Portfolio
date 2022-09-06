@@ -16,9 +16,9 @@
   }
 
 	.image {
-		-webkit-animation: spin 4s linear infinite;
-		-moz-animation: spin 4s linear infinite;
-		animation: spin 4s linear infinite;
+		-webkit-animation: spin 1s linear infinite;
+		-moz-animation: spin 1s linear infinite;
+		animation: spin 1s linear infinite;
 	}
 
 	@-moz-keyframes spin {

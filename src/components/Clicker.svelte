@@ -37,7 +37,6 @@
 	function onKeyDown(e) {
 		switch (e.keyCode) {
 			case space:
-				e.preventDefault();
 				clicked();
 				break;
 			case U:
@@ -55,12 +54,12 @@
 <svelte:window on:keydown|preventDefault={onKeyDown} />
 
 <div class="clicker">
-	<h1>Moolah Clicker</h1>
-	<img class="moolah" src="assets/moolah.png" alt="Lenny" width="200" height="200" />
+	<h1>Foot Clicker</h1>
+	<img class="foot" src="assets/foot.gif" alt="Lenny" width="300" height="300" />
 
 	<div class="score">
 		<p>
-			Your score is: {score.toLocaleString()}
+			You have {score.toLocaleString()} toe{score !== 1 ? 's' : ''}!
 		</p>
 	</div>
 
@@ -84,21 +83,28 @@
 <style>
 	p {
 		color: #fefefe;
+		font-size: 1.25rem;
 	}
 
 	h1 {
 		color: #fefefe;
+		font-size: 4rem;
 	}
 
 	button {
 		border-radius: 2px;
 		background-color: transparent;
-		border: 2px solid salmon;
+		border: 2px solid #fefefe;
 		padding: 10px;
 		margin: 5px;
 		width: auto;
-		min-width: 25vw;
+		min-width: 50vw;
 		font-family: 'Source Code Pro', sans-serif;
+	}
+
+	button:hover {
+		background-color: #2d834eb9;
+		cursor: pointer;
 	}
 
 	.clicker {
@@ -108,40 +114,13 @@
 		min-width: 100vw;
 		min-height: 100vh;
 		flex-direction: column;
-		background: #004e92;
-		background: -webkit-linear-gradient(to bottom, #004e92, #000428);
-		background: linear-gradient(to bottom, #004e92, #000428);
+		background: #2d834eb9;
 	}
 
 	.score {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	}
-
-	.moolah {
-		-webkit-animation: spin 2s linear infinite;
-		-moz-animation: spin 2s linear infinite;
-		animation: spin 2s linear infinite;
-	}
-
-	@-moz-keyframes spin {
-		100% {
-			-moz-transform: rotate(360deg);
-		}
-	}
-
-	@-webkit-keyframes spin {
-		100% {
-			-webkit-transform: rotate(360deg);
-		}
-	}
-
-	@keyframes spin {
-		100% {
-			-webkit-transform: rotate(360deg);
-			transform: rotate(360deg);
-		}
 	}
 
 	kbd {
