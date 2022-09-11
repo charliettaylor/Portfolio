@@ -55,10 +55,10 @@
 
 <div class="clicker">
 	<h1>Foot Clicker</h1>
-	<img class="foot" src="assets/foot.gif" alt="Lenny" width="300" height="300" />
+	<img class="foot" src="assets/foot.gif" alt="Lenny" />
 
-	<div class="score">
-		<p>
+	<div>
+		<p class="score">
 			You have {score.toLocaleString()} toe{score !== 1 ? 's' : ''}!
 		</p>
 	</div>
@@ -81,30 +81,51 @@
 </div>
 
 <style>
-	p {
+	.score {
 		color: #fefefe;
 		font-size: 1.25rem;
 	}
 
+	p {
+		font-size: 1rem;
+		color: #fefefe;
+	}
+
 	h1 {
 		color: #fefefe;
-		font-size: 4rem;
+		font-size: 3rem;
 	}
 
 	button {
 		border-radius: 2px;
 		background-color: transparent;
 		border: 2px solid #fefefe;
-		padding: 10px;
-		margin: 5px;
+		padding: 0.5rem;
+		margin: 0.2rem;
 		width: auto;
+		/* height: 5vh; */
 		min-width: 50vw;
 		font-family: 'Source Code Pro', sans-serif;
+		border-radius: 0.5rem;
+		font-size: 0.75rem;
 	}
 
 	button:hover {
 		background-color: #2d834eb9;
 		cursor: pointer;
+	}
+	
+	button:active {
+		transform: scale(0.95);
+	}
+
+	.foot {
+		height: 10rem;
+		width: 10rem;
+	}
+
+	.foot:active {
+		transform: scale(0.95);
 	}
 
 	.clicker {

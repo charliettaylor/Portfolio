@@ -138,17 +138,21 @@
 	}
 
 	.row {
-		min-width: 100vw;
-		min-height: 100vh;
+		width: 100vw;
+		height: 100vh;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
+		margin: 0;
+		padding: 0;
 	}
 
 	.tile {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
+		/* flex-direction: column; */
+		/* align-items: center; */
 		justify-content: center;
+		margin: 0;
+		padding: 0;
 	}
 </style>
