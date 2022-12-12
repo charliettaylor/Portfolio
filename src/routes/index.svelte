@@ -12,7 +12,6 @@
 	import { jobs } from './jobs';
 	import { contacts } from './contacts';
 
-
 	let innerWidth = 0
 	let innerHeight = 0
 	$: mobile = innerWidth < 1080;
@@ -20,7 +19,7 @@
 
 <svelte:head>
 	<link
-		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap"
 		rel="stylesheet"
 	/>
 	<link rel="icon" type="image/ico" href="assets/favicon.ico" />
@@ -65,7 +64,7 @@
 
 		<section id="work">
 			<div class="jobs">
-				<h1 class="header">Work Experience</h1>
+				<h1 class="header">Experience</h1>
 				<div class={!mobile ? "page3" : "page3 mobile"}>
 					{#if !mobile}
 						{#each jobs as job}
@@ -245,6 +244,7 @@
 		padding-bottom: 2rem;
 		border-bottom: 0.5rem solid var(--text);
 	}
+
 	.education {
 		display: flex;
 		flex-direction: column;

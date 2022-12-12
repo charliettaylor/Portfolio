@@ -39,6 +39,16 @@
 </div>
 
 <style>
+	@keyframes background-pan {
+		from {
+			background-position: 50% center;
+		}
+
+		to {
+			background-position: -150% center;
+		}
+	}
+
 	p {
 		color: var(--left);
 		padding: 0.3rem 1.5rem;
@@ -57,13 +67,10 @@
 		padding: 0.5em;
 	}
 
-	button:hover {
-		background-color: var(--split);
-		color: var(--text);
-	}
-
-	button:active {
-		background-color: var(--split);
+	button:hover, button:active, .active {
+		background: var(--split);
+		background-size: 200%;
+		animation: background-pan 5s linear infinite;
 		color: var(--text);
 	}
 
