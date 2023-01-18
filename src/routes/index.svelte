@@ -18,10 +18,6 @@
 </script>
 
 <svelte:head>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap"
-		rel="stylesheet"
-	/>
 	<link rel="icon" type="image/ico" href="assets/favicon.ico" />
 </svelte:head>
 
@@ -117,33 +113,6 @@
 </body>
 
 <style>
-	:root {
-		--left: #5C2420;
-		--right: #973831;
-		--text: #ffeadb;
-		--flair: #5b7b65;
-		--split:  linear-gradient(
-			to right,
-			var(--left) 0%,
-			var(--left) 50%,
-			var(--right) 50%,
-			var(--right) 100%
-		);
-	}
-
-	body {
-		padding: 0;
-		margin: 0;
-		font-family: "Source Code Pro", sans-serif;
-		background: linear-gradient(
-			to right,
-			var(--left) 0%,
-			var(--left) 50%,
-			var(--right) 50%,
-			var(--right) 100%
-		);
-	}
-
 	section {
 		width: 100vw;
 		min-height: 90vh;
