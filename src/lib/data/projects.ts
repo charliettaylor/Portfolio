@@ -18,9 +18,14 @@ export const projects = [
 		link: 'https://github.com/Peekoe/Portfolio'
 	},
 	{
-		heading: '🌙 NITEMPO',
+		heading: '🎨 GESSO',
 		content:
-			'A music-oriented social media platform. Developed as part of a project for my software engineering class, I built the API of the website in JavaScript using Express.',
+			'A TypeScript API client for Canvas LMS. I decided to make this because of my previous projects that used Canvas, as the available libraries did not provide the types that I would have liked.',
 		link: 'https://github.com/Peekoe/nitempo'
+	},
+	{
+		heading: '🧠 GPT QUIZ',
+		content: 'A Kahoot-like quiz game where Chat GPT is a contestant. Backend made with Python and FastAPI, frontend made with Svelte, and used web sockets to communicate betweent the two.',
+		link: 'https://github.com/Peekoe/gpt-showdown'
 	}
 ];

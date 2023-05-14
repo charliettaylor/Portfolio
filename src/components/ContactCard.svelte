@@ -37,6 +37,11 @@
 		align-items: center;
 	}
 
+	.btn:hover {
+		color: var(--text);
+		background-color: var(--right);
+	}
+
 	a {
 		text-decoration: none;
 	}

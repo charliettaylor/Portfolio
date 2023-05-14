@@ -8,5 +8,5 @@
  - [X] Projects section
  - [X] Contact page
  - [ ] About page/section
- - [ ] Make mobile friendly
- - [ ] Something funny, maybe a game or randomizer
+ - [X] Make mobile friendly
+ - [ ] The Playground

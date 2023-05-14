@@ -1,9 +1,9 @@
 <script>
 	const titles = [
-		['Home', '#one'],
-		['Projects', '#two'],
-		['Work', '#three'],
-		['Contact', '#five']
+		['Projects', '#projects'],
+		['Work', '#work'],
+		['Education', '#education'],
+		['Contact', '#contact']
 	];
 
 	let innerWidth = 0
