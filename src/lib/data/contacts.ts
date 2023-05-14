@@ -21,7 +21,7 @@ export const contacts = [
 	},
 	{
 		name: 'Resume',
-		link: 'assets/resume.pdf',
+		link: new URL('/resume.pdf', import.meta.url).href,
 		image: new URL('/resume.png', import.meta.url).href,
 		alt: 'Resume Image'
 	}

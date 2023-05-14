@@ -3,7 +3,7 @@ export const jobs = [
 		heading: 'Junior Software Engineer',
 		subheading: 'Lockstep',
 		content:
-			'I currently work on the API team and continue to develop new endpoints and systems. I work on connectors to different ERPs like QuickBooks Online and Xero to sync client data to our environment. I developed a system to extract file attachments from various ERPs and upload them to cloud storage, as well as make Azure Function HTTP triggers to retrieve PDFs of invoices, payments, etc. I also have led a project to integrate a payments acceptance service into our platform.',
+			'I currently work on the API team and continue to develop new endpoints and systems. I work on connectors to different ERPs like QuickBooks Online and Xero to sync client data to our environment. I developed a system to extract file attachments from various ERPs and upload them to cloud storage, as well as make Azure Function HTTP triggers to retrieve PDFs of invoices, payments, etc. I also have led a project to integrate a payments acceptance service into our platform that supports Stripe and PayPal.',
 		date: 'January 2022 - Current'
 	},
 	{

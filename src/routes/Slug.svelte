@@ -1,6 +1,7 @@
 <script lang="ts">
-  export let path;
+  export let path: string;
   import { LINKS } from '../lib/data/links';
+  path = path.replaceAll('/', '').toLowerCase();
 </script>
 
 {#if path in LINKS}

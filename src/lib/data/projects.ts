@@ -21,11 +21,16 @@ export const projects = [
 		heading: '🎨 GESSO',
 		content:
 			'A TypeScript API client for Canvas LMS. I decided to make this because of my previous projects that used Canvas, as the available libraries did not provide the types that I would have liked.',
-		link: 'https://github.com/Peekoe/nitempo'
+		link: 'https://github.com/Peekoe/Gesso'
 	},
 	{
 		heading: '🧠 GPT QUIZ',
-		content: 'A Kahoot-like quiz game where Chat GPT is a contestant. Backend made with Python and FastAPI, frontend made with Svelte, and used web sockets to communicate betweent the two.',
+		content: 'A Kahoot-like quiz game where Chat GPT is a contestant. Backend made with Python and FastAPI, frontend made with Svelte, and used web sockets to communicate between the two.',
 		link: 'https://github.com/Peekoe/gpt-showdown'
+	},
+	{
+		heading: '✈ LAYOVER PARTY',
+		content: 'An app that allows you to look for flights that have long layovers to visit more places as you travel. Made for LA Hacks 2023, I worked on the backend with Python and FastAPI and had a Flutter frontend. We won best in our category for travel!',
+		link: 'https://github.com/diamondburned/layover-party-backend'
 	}
 ];
