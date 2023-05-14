@@ -1,8 +1,8 @@
-<script lang="js">
-	import Welcome from '../../components/Welcome.svelte';
-	import Map from '../../components/Map.svelte';
-	import Spin from '../../components/Spin.svelte';
-	import Clicker from '../../components/Clicker.svelte';
+<script lang="ts">
+	import Welcome from '../components/Welcome.svelte';
+	import Map from '../components/Map.svelte';
+	import Spin from '../components/Spin.svelte';
+	import Clicker from '../components/Clicker.svelte';
 
 	$: currTile = 0;
 	let [up, down, right, left, space] = [38, 40, 39, 37, 32];
@@ -11,7 +11,7 @@
 	$: scrollX = 0;
 	$: scrollY = 0;
 
-	function onKeyDown(e) {
+	function onKeyDown(e: KeyboardEvent) {
 		switch (e.keyCode) {
 			case up:
 				updateCurrTile(-3);
@@ -44,10 +44,7 @@
 		}
 	}
 
-	/**
-	 * @param {number} change
-	 */
-	function updateCurrTile(change) {
+	function updateCurrTile(change: number) {
 		let newCurr = currTile + change;
 		if (newCurr < 0 || newCurr > 8) {
 			return;

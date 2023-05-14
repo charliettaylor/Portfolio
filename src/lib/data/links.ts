@@ -1,4 +1,4 @@
-export const LINKS = {
+export const LINKS: { [key: string]: string } = {
   'g': 'https://github.com/Peekoe/',
   'gh': 'https://github.com/Peekoe/',
   'github': 'https://github.com/Peekoe/',

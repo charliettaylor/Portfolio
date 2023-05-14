@@ -7,23 +7,17 @@
 	import ContactCard from '../components/ContactCard.svelte';
 	import Experience from '../components/Experience.svelte';
 
-	import { projects } from './projects';
-	import { schools } from './schools';
-	import { jobs } from './jobs';
-	import { contacts } from './contacts';
+	import { projects } from '../lib/data/projects';
+	import { schools } from '../lib/data/schools';
+	import { jobs } from '../lib/data/jobs';
+	import { contacts } from '../lib/data/contacts';
 
 	let innerWidth = 0
 	let innerHeight = 0
 	$: mobile = innerWidth < 1080;
 </script>
 
-<svelte:head>
-	<link rel="icon" type="image/ico" href="assets/favicon.ico" />
-</svelte:head>
-
 <svelte:window bind:innerWidth bind:innerHeight />
-
-<title> Charlie Taylor </title>
 
 <body>
 	<div class="wrapper">

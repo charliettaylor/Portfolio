@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { LINKS } from '../server/links';
+  export let path;
+  import { LINKS } from '../lib/data/links';
 </script>
 
-{#if $page.params.slug in LINKS}
-  <meta http-equiv="refresh" content="0; url={ LINKS[$page.params.slug] }">  
+{#if path in LINKS}
+  <meta http-equiv="refresh" content="0; url={ LINKS[path] }">  
 {:else}
   <title> 🌎 Not Found  </title>
   <body>
