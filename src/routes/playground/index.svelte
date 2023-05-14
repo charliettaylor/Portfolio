@@ -1,68 +1,65 @@
 <script lang="js">
-	import Welcome from '../../components/Welcome.svelte';
-	import Map from '../../components/Map.svelte';
-	import Spin from '../../components/Spin.svelte';
-	import Clicker from '../../components/Clicker.svelte';
+  import Welcome from "./Welcome.svelte";
+  import Map from './Map.svelte';
+  import Spin from "./Spin.svelte";
 
-	$: currTile = 0;
-	let [up, down, right, left, space] = [38, 40, 39, 37, 32];
-	let innerWidth = 0;
+  $: currTile = 0;
+  let [up, down, right, left] = [38, 40, 39, 37];
+  let innerWidth = 0;
 	let innerHeight = 0;
-	$: scrollX = 0;
-	$: scrollY = 0;
+  $: scrollX = 0;
+  $: scrollY = 0;
 
-	function onKeyDown(e) {
-		switch (e.keyCode) {
-			case up:
-				updateCurrTile(-3);
-				break;
-			case down:
-				updateCurrTile(3);
-				break;
-			case left:
-				updateCurrTile(-1);
-				break;
-			case right:
-				updateCurrTile(1);
-				break;
-			case space:
-				e.preventDefault();
-				break;
-		}
-		updateScreenPosition();
-	}
+  /**
+  * @param {{ keyCode: any; }} e
+  */
+  function onKeyDown(e) {
+    switch(e.keyCode) {
+      case up:
+        updateCurrTile(-3);
+        break;
+      case down:
+        updateCurrTile(3);
+        break;
+      case left:
+        updateCurrTile(-1);
+        break;
+      case right:
+        updateCurrTile(1);
+        break;
+    }
+    updateScreenPosition();
+  }
 
-	function updateScreenPosition() {
-		scrollX = innerWidth * (currTile % 3);
+  function updateScreenPosition() {
+    scrollX = innerWidth * (currTile % 3);
+    
+    if (currTile > 5) {
+      scrollY = innerHeight * 2;
+    } else if (currTile > 2) {
+      scrollY = innerHeight;
+    } else {
+      scrollY = 0;
+    }
+  }
 
-		if (currTile > 5) {
-			scrollY = innerHeight * 2;
-		} else if (currTile > 2) {
-			scrollY = innerHeight;
-		} else {
-			scrollY = 0;
-		}
-	}
-
-	/**
-	 * @param {number} change
-	 */
-	function updateCurrTile(change) {
-		let newCurr = currTile + change;
-		if (newCurr < 0 || newCurr > 8) {
-			return;
-		}
-		currTile = newCurr;
-	}
+  /**
+  * @param {number} change
+  */
+  function updateCurrTile(change) {
+    let newCurr = currTile + change;
+    if (newCurr < 0 || newCurr > 8)
+    {
+      return;
+    }
+    currTile = newCurr;
+  }
 </script>
 
-<svelte:window
-	on:keydown|preventDefault={onKeyDown}
-	bind:innerWidth
-	bind:innerHeight
-	bind:scrollX
-	bind:scrollY
-/>
+<svelte:window on:keydown|preventDefault={onKeyDown}
+  bind:innerWidth bind:innerHeight
+  bind:scrollX bind:scrollY />
+
 
 <svelte:head>
 	<link
@@ -73,86 +70,82 @@
 </svelte:head>
 
 <body>
-	<Map position={currTile} />
+  <Map position={currTile} />
 
-	<div class="row">
-		<div class="tile">
-			<Welcome color="crimson" />
-		</div>
+  <div class="row">
+    <div class="tile">
+      <Welcome color="crimson" />
+    </div>
 
-		<div class="tile">
-			<Spin />
-		</div>
+    <div class="tile">
+      <Spin />
+    </div>
 
-		<div class="tile">
-			<Clicker />
-		</div>
-	</div>
+    <div class="tile">
+      <Welcome color="green" />
+    </div>
+  </div>
 
-	<div class="row">
-		<div class="tile">
-			<Welcome color="cornflowerblue" />
-		</div>
+  <div class="row">
+    <div class="tile">
+      <Welcome color="cornflowerblue" />
+    </div>
 
-		<div class="tile">
-			<Welcome color="pink" />
-		</div>
+    <div class="tile">
+      <Welcome color="pink" />
+    </div>
 
-		<div class="tile">
-			<Welcome color="orange" />
-		</div>
-	</div>
+    <div class="tile">
+      <Welcome color="orange" />
+    </div>
+  </div>
 
-	<div class="row">
-		<div class="tile">
-			<Welcome color="purple" />
-		</div>
+  <div class="row">
+    <div class="tile">
+      <Welcome color="purple" />
+    </div>
 
-		<div class="tile">
-			<Welcome color="black" />
-		</div>
+    <div class="tile">
+      <Welcome color="black" />
+    </div>
 
-		<div class="tile">
-			<Welcome color="salmon" />
-		</div>
-	</div>
+    <div class="tile">
+      <Welcome color="salmon" />
+    </div>
+  </div>
 </body>
 
 <style>
-	body {
-		margin: 0;
-		padding: 0;
-		font-family: 'Source Code Pro', sans-serif;
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Source Code Pro", sans-serif;
 
-		/* overflow: auto; */
-		-ms-overflow-style: none;
-		scrollbar-color: transparent transparent; /*just hides the scrollbar for firefox */
-	}
+    /* overflow: auto; */
+    -ms-overflow-style: none;
+    scrollbar-color: transparent transparent; /*just hides the scrollbar for firefox */
+  }
 
-	::-webkit-scrollbar {
-		display: none;
-	}
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
-	::-moz-scrollbar {
-		display: none;
-	}
+  ::-moz-scrollbar {
+    display: none;
+  }
 
-	.row {
-		width: 100vw;
-		height: 100vh;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		margin: 0;
-		padding: 0;
-	}
+  .row {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 
-	.tile {
-		display: flex;
-		/* flex-direction: column; */
-		/* align-items: center; */
-		justify-content: center;
-		margin: 0;
-		padding: 0;
-	}
+  .tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 </style>

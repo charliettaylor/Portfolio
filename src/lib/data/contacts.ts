@@ -1,26 +1,28 @@
+import { getAssetUrl } from '../utils';
+
 export const contacts = [
 	{
 		name: 'GitHub',
 		link: 'https://github.com/Peekoe/',
-		image: 'assets/github.svg',
+		image: getAssetUrl('/github.svg'),
 		alt: 'GitHub Logo'
 	},
 	{
 		name: 'LinkedIn',
 		link: 'https://linkedin.com/in/charliettaylor/',
-		image: 'assets/linkedin.svg',
+		image: new URL('/linkedin.svg', import.meta.url).href,
 		alt: 'LinkedIn Logo'
 	},
   {
 		name: 'Email',
 		link: 'mailto:charlie@peekoe.net',
-		image: 'assets/email.svg',
+		image: new URL('/email.svg', import.meta.url).href,
 		alt: 'Email Symbol'
 	},
 	{
 		name: 'Resume',
 		link: 'assets/resume.pdf',
-		image: 'assets/resume.png',
+		image: new URL('/resume.png', import.meta.url).href,
 		alt: 'Resume Image'
 	}
 ];
