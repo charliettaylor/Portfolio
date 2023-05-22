@@ -102,7 +102,6 @@
 				</div>
 			</div>
 			<div id="footer">
-				
 				<Footer />
 			</div>
 		</section>
@@ -192,7 +191,6 @@
 		position: absolute;
 		bottom: 0;
 		display: flex;
-		padding-left: 2vw;
 	}
 
 	#work {

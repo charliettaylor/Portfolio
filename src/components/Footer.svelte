@@ -14,7 +14,7 @@
 <style>
 	footer {
 		height: 5vh;
-		width: 105vw;
+		width: 100vw;
 		position: relative;
 		bottom: 0px;
 		margin-top: 1rem;
