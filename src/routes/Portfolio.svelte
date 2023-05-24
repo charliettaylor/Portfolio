@@ -188,7 +188,6 @@
 		position: absolute;
 		bottom: 0;
 		display: flex;
-		padding-left: 2vw;
 	}
 
 	#work {

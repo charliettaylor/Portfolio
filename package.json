@@ -24,5 +24,8 @@
 		"typescript": "~4.6.2",
 		"vite": "^4.2.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"libwebring": "github:diamondburned/libwebring#nightly"
+	}
 }
