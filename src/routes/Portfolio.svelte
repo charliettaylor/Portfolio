@@ -7,6 +7,9 @@
 	import ContactCard from '../components/ContactCard.svelte';
 	import Experience from '../components/Experience.svelte';
 
+	import "libwebring/dist/webring-element.js";
+	import "libwebring/dist/webring.css";
+
 	import { projects } from '../lib/data/projects';
 	import { schools } from '../lib/data/schools';
 	import { jobs } from '../lib/data/jobs';
