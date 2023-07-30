@@ -1,8 +1,8 @@
 <script lang="ts">
-	export let heading: String;
-	export let subheading: String;
+  export let heading: String;
+  export let subheading: String;
   export let date: String;
-	export let content: String;
+  export let content: String;
 </script>
 
 <div class="row">
@@ -39,32 +39,32 @@
   }
 
   .row {
-		display: flex;
-		flex-direction: row;
-	}
+    display: flex;
+    flex-direction: row;
+  }
 
-	.column {
-		display: flex;
-		flex-direction: column;
-		flex-basis: auto;
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
     width: 50%;
-	}
+  }
 
-	.left {
-		color: var(--text);
-		display: flex;
+  .left {
+    color: var(--text);
+    display: flex;
     flex-direction: column;
-		align-items: flex-start;
-	}
+    align-items: flex-start;
+  }
 
-	.right {
-		text-align: center;
-		color: var(--text);
-		display: flex;
+  .right {
+    text-align: center;
+    color: var(--text);
+    display: flex;
     flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
+    justify-content: center;
+    align-items: center;
+  }
 
   .right .date {
     align-self: flex-end;

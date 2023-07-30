@@ -1,36 +1,36 @@
 <script>
-	import "libwebring/dist/webring-element.js";
-  	import "libwebring/dist/webring.css";
+  import 'libwebring/dist/webring-element.js';
+  import 'libwebring/dist/webring.css';
 
-	let innerWidth = 0;
-	let innerHeight = 0;
-	$: mobile = innerWidth < 1080;
+  let innerWidth = 0;
+  let innerHeight = 0;
+  $: mobile = innerWidth < 1080;
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
 <footer class={!mobile ? '' : 'mobile'}>
-	<webring-element
-		src="https://raw.githubusercontent.com/diamondburned/acmfriends-webring/%3C3-spring-2023/webring.json"
-		name="peekoe"
-	/>
+  <webring-element
+    src="https://raw.githubusercontent.com/diamondburned/acmfriends-webring/%3C3-spring-2023/webring.json"
+    name="charlie"
+  />
 </footer>
 
 <style>
-	footer {
-		height: 5vh;
-		width: 100vw;
-		position: relative;
-		bottom: 0px;
-		margin-top: 1rem;
-		background-color: var(--flair);
-		align-items: center;
-		justify-content: center;
-		display: flex;
-		color: var(--text);
-	}
+  footer {
+    height: 5vh;
+    width: 100vw;
+    position: relative;
+    bottom: 0px;
+    margin-top: 1rem;
+    background-color: var(--flair);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: var(--text);
+  }
 
-	.mobile {
-		justify-content: center;
-	}
+  .mobile {
+    justify-content: center;
+  }
 </style>

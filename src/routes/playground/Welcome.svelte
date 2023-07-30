@@ -1,15 +1,11 @@
 <script>
-  export let color = "";
+  export let color = '';
 </script>
 
 <div class="container" style="background-color: {color};">
   <div class="title">
-    <h1>
-      Welcome to the Playground!
-    </h1>
-    <h3>
-      Jump around the tiles with the arrow keys
-    </h3>
+    <h1>Welcome to the Playground!</h1>
+    <h3>Jump around the tiles with the arrow keys</h3>
   </div>
 </div>
 

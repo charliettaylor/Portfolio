@@ -4,19 +4,19 @@
 
 <div class="grid">
   <div class="row">
-    <div class="cell" style="background-color: {position == 0 ? 'black' : 'gray'};"></div>
-    <div class="cell" style="background-color: {position == 1 ? 'black' : 'gray'};"></div>
-    <div class="cell" style="background-color: {position == 2 ? 'black' : 'gray'};"></div>
+    <div class="cell" style="background-color: {position == 0 ? 'black' : 'gray'};" />
+    <div class="cell" style="background-color: {position == 1 ? 'black' : 'gray'};" />
+    <div class="cell" style="background-color: {position == 2 ? 'black' : 'gray'};" />
   </div>
   <div class="row">
-    <div class="cell" style="background-color: {position == 3 ? 'black' : 'gray'};"></div>
-    <div class="cell" style="background-color: {position == 4 ? 'black' : 'gray'};"></div>
-    <div class="cell" style="background-color: {position == 5 ? 'black' : 'gray'};"></div>
+    <div class="cell" style="background-color: {position == 3 ? 'black' : 'gray'};" />
+    <div class="cell" style="background-color: {position == 4 ? 'black' : 'gray'};" />
+    <div class="cell" style="background-color: {position == 5 ? 'black' : 'gray'};" />
   </div>
   <div class="row">
-    <div class="cell" style="background-color: {position == 6 ? 'black' : 'gray'};"></div>
-    <div class="cell" style="background-color: {position == 7 ? 'black' : 'gray'};"></div>
-    <div class="cell" style="background-color: {position == 8 ? 'black' : 'gray'};"></div>
+    <div class="cell" style="background-color: {position == 6 ? 'black' : 'gray'};" />
+    <div class="cell" style="background-color: {position == 7 ? 'black' : 'gray'};" />
+    <div class="cell" style="background-color: {position == 8 ? 'black' : 'gray'};" />
   </div>
 </div>
 

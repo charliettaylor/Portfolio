@@ -1,20 +1,20 @@
 <script lang="js">
-  import Welcome from "./Welcome.svelte";
+  import Welcome from './Welcome.svelte';
   import Map from './Map.svelte';
-  import Spin from "./Spin.svelte";
+  import Spin from './Spin.svelte';
 
   $: currTile = 0;
   let [up, down, right, left] = [38, 40, 39, 37];
   let innerWidth = 0;
-	let innerHeight = 0;
+  let innerHeight = 0;
   $: scrollX = 0;
   $: scrollY = 0;
 
   /**
-  * @param {{ keyCode: any; }} e
-  */
+   * @param {{ keyCode: any; }} e
+   */
   function onKeyDown(e) {
-    switch(e.keyCode) {
+    switch (e.keyCode) {
       case up:
         updateCurrTile(-3);
         break;
@@ -33,7 +33,7 @@
 
   function updateScreenPosition() {
     scrollX = innerWidth * (currTile % 3);
-    
+
     if (currTile > 5) {
       scrollY = innerHeight * 2;
     } else if (currTile > 2) {
@@ -44,29 +44,31 @@
   }
 
   /**
-  * @param {number} change
-  */
+   * @param {number} change
+   */
   function updateCurrTile(change) {
     let newCurr = currTile + change;
-    if (newCurr < 0 || newCurr > 8)
-    {
+    if (newCurr < 0 || newCurr > 8) {
       return;
     }
     currTile = newCurr;
   }
 </script>
 
-<svelte:window on:keydown|preventDefault={onKeyDown}
-  bind:innerWidth bind:innerHeight
-  bind:scrollX bind:scrollY />
-
+<svelte:window
+  on:keydown|preventDefault={onKeyDown}
+  bind:innerWidth
+  bind:innerHeight
+  bind:scrollX
+  bind:scrollY
+/>
 
 <svelte:head>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
-		rel="stylesheet"
-	/>
-	<link rel="icon" type="image/ico" href="assets/favicon.ico" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@600&family=Source+Code+Pro:wght@500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" type="image/ico" href="assets/favicon.ico" />
 </svelte:head>
 
 <body>
@@ -119,7 +121,7 @@
   body {
     margin: 0;
     padding: 0;
-    font-family: "Source Code Pro", sans-serif;
+    font-family: 'Source Code Pro', sans-serif;
 
     /* overflow: auto; */
     -ms-overflow-style: none;

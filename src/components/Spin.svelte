@@ -2,7 +2,7 @@
 </script>
 
 <div class="rotation">
-	<img class="image" src="assets/lenny.png" alt="Spinning Lenny Face :)" />
+  <img class="image" src="assets/lenny.png" alt="Spinning Lenny Face :)" />
 </div>
 
 <style>
@@ -15,28 +15,28 @@
     background-color: black;
   }
 
-	.image {
-		-webkit-animation: spin 1s linear infinite;
-		-moz-animation: spin 1s linear infinite;
-		animation: spin 1s linear infinite;
-	}
+  .image {
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+  }
 
-	@-moz-keyframes spin {
-		100% {
-			-moz-transform: rotate(360deg);
-		}
-	}
+  @-moz-keyframes spin {
+    100% {
+      -moz-transform: rotate(360deg);
+    }
+  }
 
-	@-webkit-keyframes spin {
-		100% {
-			-webkit-transform: rotate(360deg);
-		}
-	}
+  @-webkit-keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
 
-	@keyframes spin {
-		100% {
-			-webkit-transform: rotate(360deg);
-			transform: rotate(360deg);
-		}
-	}
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
 </style>

@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
 
 :root {
-  --left: #5C2420;
+  --left: #5c2420;
   --right: #973831;
   --text: #ffeadb;
   --flair: #5b7b65;
-  --split:  linear-gradient(
+  --split: linear-gradient(
     to right,
     var(--left) 0%,
     var(--left) 50%,
@@ -14,10 +14,11 @@
   );
 }
 
-body, #svelte {
+body,
+#svelte {
   padding: 0;
   margin: 0;
-  font-family: "Source Code Pro", sans-serif;
+  font-family: 'Source Code Pro', sans-serif;
   background: linear-gradient(
     to right,
     var(--left) 0%,
@@ -27,6 +28,7 @@ body, #svelte {
   );
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: var(--text);
 }
