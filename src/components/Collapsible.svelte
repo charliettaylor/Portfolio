@@ -1,5 +1,6 @@
 <script lang="ts">
   import { slide } from 'svelte/transition';
+  import { getAssetUrl } from '../lib/utils';
   export let heading: String;
   export let content: String;
   export let link: string;
@@ -30,14 +31,16 @@
         {content}
       </p>
       <div class="link">
-        <a href={link} class="link-text" target="_blank" rel="noopener noreferrer"> Link </a>
+        <a href={link} class="link-text" target="_blank" rel="noopener noreferrer">
+          <img src={getAssetUrl('/github.svg')} alt="" />
+        </a>
       </div>
     </span>
   {/if}
 </div>
 
 <style>
-  @keyframes background-pan {
+  /* @keyframes background-pan {
     from {
       background-position: 50% center;
     }
@@ -45,7 +48,7 @@
     to {
       background-position: -150% center;
     }
-  }
+  } */
 
   p {
     color: var(--left);
@@ -74,6 +77,14 @@
     color: var(--text);
   }
 
+  a {
+    background-color: var(--right);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   a:link {
     text-decoration: none;
     color: var(--left);
@@ -82,6 +93,10 @@
   a:visited {
     text-decoration: none;
     color: var(--left);
+  }
+
+  img {
+    height: 2rem;
   }
 
   .heading {
@@ -129,8 +144,6 @@
   }
 
   .link-text {
-    color: var(--left);
-    border: 2px solid var(--left);
     border-radius: 0.25rem;
     padding: 0.25rem;
   }
