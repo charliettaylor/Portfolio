@@ -12,7 +12,7 @@
       Hey, I'm Charlie!
       <br />
     </h1>
-    <p>Aspiring Backend Developer</p>
+    <p>Backend Developer</p>
   </h1>
 </div>
 
