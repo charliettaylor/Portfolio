@@ -3,7 +3,7 @@ export const jobs = [
     heading: 'Software Engineer',
     subheading: 'Sage',
     content:
-      'I currently work on the Accounting Data Service team, which focuses on handling accounting data. I work on systems to handle eInvoicing, attachments, etc. I developed a system to extract file attachments from various ERPs and upload them to cloud storage, as well as make Azure Function HTTP triggers to retrieve PDFs of invoices, payments, etc. I also have led a project to integrate a payments acceptance service into our platform that supports Stripe and PayPal.',
+      'I work on the Accounting Data Service which handles millions of records from various Sage ERP systems. I own the Attachments service, resolving critical production incidents and leading feature enhancements. I implemented an integration with a payments acceptance service, enabling transactions through platforms like Stripe and PayPal. I currently lead security initiatives for the team, managing automated scans and vulnerability patching processes.',
     date: 'January 2022 - Current'
   },
   {
